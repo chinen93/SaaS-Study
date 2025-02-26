@@ -30,10 +30,7 @@ django-admin startproject saas
 python3 manage.py startapp app
 ```
 
-## Run Django
-```sh
-python3 manage.py runserver
-```
+Add app to INSTALLED_APPS in the settings.py file
 
 ## Dependencies
 
@@ -45,4 +42,15 @@ pip3 freeze > requirements.txt
 ### Install Dependencies
 ```sh
 pip3 install -r requirements.txt
+```
+
+## Run Django
+```sh
+python3 manage.py runserver
+```
+
+### Migrate Database
+```sh
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```

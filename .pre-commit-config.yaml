@@ -1,0 +1,20 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: Code Formatting Step
+        entry: cd backend && black .
+        language: python
+        types: [python]
+
+      - id: isort
+        name: Sort Imports Step
+        entry: cd backend && isort .
+        language: python
+        types: [python]
+
+      - id: flake8
+        name: Style Guide Enforcement Step
+        entry: cd backend && flake8 .
+        language: python
+        types: [python]
