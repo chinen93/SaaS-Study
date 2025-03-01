@@ -1,5 +1,5 @@
 """
-URL configuration for saas project.
+URL configuration for saas_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -15,17 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+# from apps.risks_old.views import RiskViewSet
+from apps.users.views import UserViewSet
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from risks.views import RiskViewSet
-from users.views import UserViewSet
 
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r"users", UserViewSet)
-router.register(r"risks", RiskViewSet)
+# router.register(r"risks", RiskViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

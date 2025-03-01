@@ -1,5 +1,5 @@
+from apps.users.models import UserSaaS
 from rest_framework import serializers
-from users.models import UserSaaS
 
 
 # Serializers define the API representation.

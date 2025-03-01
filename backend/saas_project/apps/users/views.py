@@ -1,6 +1,6 @@
+from apps.users.models import UserSaaS
+from apps.users.serializer import UserSerializer
 from rest_framework import viewsets
-from users.models import UserSaaS
-from users.serializer import UserSerializer
 
 
 # ViewSets define the view behavior.
