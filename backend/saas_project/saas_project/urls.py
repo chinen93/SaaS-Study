@@ -15,11 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-# from apps.risks_old.views import RiskViewSet
 from apps.users.views import UserViewSet
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
+
+# from apps.risks_old.views import RiskViewSet
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 
 # Routers provide an easy way of automatically determining the URL conf.
@@ -32,5 +34,15 @@ router.register(r"users", UserViewSet)
 urlpatterns = [
     # path('', ),
     path("api/", include(router.urls)),
+    path(
+        "api/token/",
+        TokenObtainPairView.as_view(),
+        name="token_obtain_pair",
+    ),
+    path(
+        "api/token/refresh/",
+        TokenRefreshView.as_view(),
+        name="token_refresh",
+    ),
     path("admin/", admin.site.urls),
 ]
